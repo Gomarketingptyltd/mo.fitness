@@ -30,6 +30,7 @@
       --accent-soft: #d5b089;
       --line: rgba(31, 36, 31, 0.1);
       --shadow: 0 28px 70px rgba(63, 44, 28, 0.1);
+      --shadow-soft: 0 14px 34px rgba(63, 44, 28, 0.045);
       --radius-xl: 38px;
       --radius-lg: 24px;
       --radius-md: 18px;
@@ -184,15 +185,15 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(380px, 1.1fr);
-      gap: 42px;
+      grid-template-columns: minmax(0, 0.84fr) minmax(400px, 1.16fr);
+      gap: 54px;
       align-items: center;
       min-height: calc(100vh - 154px);
-      padding: 44px 0 26px;
+      padding: 52px 0 32px;
     }
 
     .hero-copy {
-      max-width: 560px;
+      max-width: 520px;
       padding-bottom: 18px;
       animation: rise 700ms ease both;
     }
@@ -230,11 +231,11 @@
 
     .hero-title {
       display: grid;
-      gap: 4px;
+      gap: 2px;
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(4.2rem, 6vw, 6.25rem);
+      font-size: clamp(4.45rem, 6.2vw, 6.6rem);
       font-weight: 600;
-      line-height: 0.88;
+      line-height: 0.86;
       letter-spacing: -0.04em;
       max-width: none;
     }
@@ -254,11 +255,11 @@
     }
 
     .hero-lead {
-      margin: 22px 0 0;
-      max-width: 47ch;
+      margin: 20px 0 0;
+      max-width: 38ch;
       color: var(--ink-soft);
-      font-size: 1rem;
-      line-height: 1.92;
+      font-size: 0.98rem;
+      line-height: 1.9;
     }
 
     .hero-lead strong {
@@ -269,7 +270,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 30px;
+      margin-top: 26px;
     }
 
     .button {
@@ -304,15 +305,17 @@
     }
 
     .button.secondary {
-      background: rgba(255, 251, 246, 0.5);
+      background: rgba(255, 251, 246, 0.3);
       border-color: rgba(31, 36, 31, 0.12);
     }
 
     .proof-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 34px;
+      gap: 0;
+      margin-top: 42px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(95, 82, 65, 0.12);
     }
 
     .proof-card,
@@ -324,10 +327,18 @@
     }
 
     .proof-card {
-      padding: 20px 20px 18px;
-      border-radius: 24px;
-      background: rgba(255, 251, 246, 0.78);
+      padding: 0 24px 0 0;
+      border-radius: 0;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
       animation: rise 720ms ease both;
+    }
+
+    .proof-card + .proof-card {
+      margin-left: 24px;
+      padding-left: 24px;
+      border-left: 1px solid rgba(95, 82, 65, 0.12);
     }
 
     .proof-card:nth-child(2) {
@@ -341,7 +352,7 @@
     .proof-card strong {
       display: block;
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(2.4rem, 3vw, 3rem);
+      font-size: clamp(2.55rem, 3vw, 3.15rem);
       font-weight: 600;
       line-height: 0.92;
       letter-spacing: -0.03em;
@@ -349,10 +360,10 @@
 
     .proof-card span {
       display: block;
-      margin-top: 8px;
+      margin-top: 6px;
       color: var(--ink-soft);
-      font-size: 0.88rem;
-      line-height: 1.6;
+      font-size: 0.82rem;
+      line-height: 1.55;
     }
 
     .hero-visual {
@@ -363,7 +374,7 @@
     }
 
     .visual-shell {
-      width: min(100%, 600px);
+      width: min(100%, 610px);
       position: relative;
       animation: rise 820ms ease both;
     }
@@ -513,14 +524,14 @@
 
     .floating-chip {
       position: absolute;
-      top: 24px;
-      right: -18px;
-      max-width: 230px;
-      padding: 18px 18px 16px;
-      border-radius: 22px;
-      background: rgba(255, 249, 242, 0.9);
+      top: 36px;
+      right: 20px;
+      max-width: 208px;
+      padding: 16px 16px 14px;
+      border-radius: 26px;
+      background: rgba(255, 249, 242, 0.88);
       border: 1px solid rgba(122, 97, 71, 0.1);
-      box-shadow: 0 24px 40px rgba(59, 40, 25, 0.12);
+      box-shadow: var(--shadow-soft);
       backdrop-filter: blur(14px);
     }
 
@@ -537,28 +548,29 @@
     .floating-chip strong {
       display: block;
       font-family: "Cormorant Garamond", serif;
-      font-size: 1.35rem;
+      font-size: 1.18rem;
       font-weight: 600;
-      line-height: 1.2;
+      line-height: 1.24;
       letter-spacing: -0.02em;
     }
 
     .section {
-      margin-top: 42px;
-      padding: 38px 36px;
-      border-radius: 36px;
-      background: rgba(255, 249, 242, 0.48);
-      border: 1px solid rgba(95, 82, 65, 0.08);
-      box-shadow: 0 18px 46px rgba(73, 53, 35, 0.05);
-      backdrop-filter: blur(14px);
+      margin-top: 56px;
+      padding: 44px 2px 0;
+      border-radius: 0;
+      background: transparent;
+      border: 0;
+      border-top: 1px solid rgba(95, 82, 65, 0.12);
+      box-shadow: none;
+      backdrop-filter: none;
       animation: rise 760ms ease both;
     }
 
     .section-heading {
       display: grid;
       gap: 10px;
-      margin-bottom: 30px;
-      max-width: 720px;
+      margin-bottom: 34px;
+      max-width: 660px;
     }
 
     .section-heading p {
@@ -572,9 +584,9 @@
 
     .section-heading h2 {
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(3rem, 4.8vw, 4.9rem);
+      font-size: clamp(2.9rem, 4.5vw, 4.55rem);
       font-weight: 600;
-      line-height: 0.92;
+      line-height: 0.94;
       letter-spacing: -0.035em;
     }
 
@@ -585,8 +597,8 @@
     }
 
     .surface-card {
-      padding: 28px;
-      border-radius: var(--radius-lg);
+      padding: 30px;
+      border-radius: 28px;
     }
 
     .surface-card h3,
@@ -693,12 +705,12 @@
     .pricing-card,
     .contact-card,
     .contact-form {
-      padding: 28px;
-      border-radius: var(--radius-lg);
-      background: var(--panel);
+      padding: 30px;
+      border-radius: 28px;
+      background: rgba(255, 251, 246, 0.56);
       border: 1px solid rgba(87, 74, 57, 0.08);
-      backdrop-filter: blur(18px);
-      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-soft);
     }
 
     .program-card {
@@ -714,7 +726,7 @@
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      background: rgba(184, 132, 82, 0.08);
+      background: rgba(184, 132, 82, 0.055);
     }
 
     .program-tag,
@@ -766,24 +778,32 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 260px;
+      min-height: auto;
+      padding: 8px 0 0;
+      background: transparent;
+      border: 0;
+      border-top: 1px solid rgba(95, 82, 65, 0.12);
+      border-radius: 0;
+      box-shadow: none;
+      backdrop-filter: none;
     }
 
     .testimonial blockquote {
       margin: 0 0 18px;
       font-family: "Cormorant Garamond", serif;
-      font-size: 1.66rem;
-      line-height: 1.26;
+      font-size: 1.86rem;
+      font-style: italic;
+      line-height: 1.18;
       letter-spacing: -0.02em;
       color: var(--ink);
     }
 
     .pricing-card.featured {
       background:
-        radial-gradient(circle at top right, rgba(213, 176, 137, 0.24), transparent 11rem),
-        linear-gradient(180deg, rgba(255, 251, 245, 0.98), rgba(249, 243, 235, 0.96));
+        radial-gradient(circle at top right, rgba(213, 176, 137, 0.16), transparent 11rem),
+        linear-gradient(180deg, rgba(255, 252, 247, 0.96), rgba(250, 244, 236, 0.92));
       border-color: rgba(184, 132, 82, 0.18);
-      transform: translateY(-10px);
+      transform: none;
     }
 
     .price {
@@ -814,7 +834,7 @@
     .contact-form {
       display: grid;
       gap: 16px;
-      background: linear-gradient(180deg, rgba(255, 251, 246, 0.97), rgba(252, 247, 241, 0.94));
+      background: linear-gradient(180deg, rgba(255, 252, 247, 0.95), rgba(252, 247, 241, 0.92));
     }
 
     .contact-form label {
@@ -931,8 +951,18 @@
       }
 
       .hero-title {
-        font-size: clamp(3.65rem, 17vw, 5rem);
-        max-width: 9ch;
+        font-size: clamp(3.3rem, 15vw, 4.45rem);
+        line-height: 0.92;
+        max-width: 8.5ch;
+      }
+
+      .hero-lead {
+        max-width: 34ch;
+        font-size: 0.95rem;
+      }
+
+      .eyebrow {
+        letter-spacing: 0.18em;
       }
 
       .hero-actions .button {
@@ -950,6 +980,22 @@
         grid-template-columns: 1fr;
       }
 
+      .proof-grid {
+        gap: 16px;
+      }
+
+      .proof-card {
+        padding: 0;
+      }
+
+      .proof-card + .proof-card {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: 0;
+        border-top: 1px solid rgba(95, 82, 65, 0.12);
+        padding-top: 16px;
+      }
+
       .portrait-card {
         min-height: auto;
       }
@@ -965,8 +1011,8 @@
       }
 
       .section {
-        padding: 28px 24px;
-        border-radius: 28px;
+        padding: 32px 0 0;
+        border-radius: 0;
       }
 
       .pricing-card.featured {
@@ -1005,13 +1051,13 @@
         <div class="hero-copy">
           <p class="eyebrow">Private Coaching / Signature Method</p>
           <h1 class="hero-title">
-            <span class="soft">Strength with poise.</span>
-            <span class="soft">Structure with calm.</span>
-            <span class="strong">Results that last.</span>
+            <span class="soft">Strength, refined.</span>
+            <span class="soft">Coaching with calm precision.</span>
+            <span class="strong">Results that stay with you.</span>
           </h1>
           <p class="hero-lead">
-            <strong>{{ Coach Name }}</strong> helps <strong>{{ Ideal Client Type }}</strong> build a leaner,
-            stronger, more confident body through high-touch coaching designed to fit real life, not compete with it.
+            <strong>{{ Coach Name }}</strong> helps <strong>{{ Ideal Client Type }}</strong> build a stronger,
+            leaner, more confident body through private coaching that feels measured, personal, and sustainable.
           </p>
 
           <div class="hero-actions">
@@ -1022,15 +1068,15 @@
           <div class="proof-grid">
             <article class="proof-card">
               <strong>{{ 6 }}+</strong>
-              <span>Years refining the method</span>
+              <span>Years coaching at a premium standard</span>
             </article>
             <article class="proof-card">
               <strong>{{ 120 }}+</strong>
-              <span>Transformations guided</span>
+              <span>Private clients guided through change</span>
             </article>
             <article class="proof-card">
               <strong>{{ 3 }}</strong>
-              <span>Private coaching pathways</span>
+              <span>Ways to work together with intention</span>
             </article>
           </div>
         </div>
@@ -1049,7 +1095,7 @@
                   <span>{{ Private Studio / Online }}</span>
                 </div>
                 <h2>{{ Coach Name }}</h2>
-                <p>{{ Strength, body recomposition, and sustainable fat loss coaching for clients who want premium support and clear structure }}</p>
+                <p>{{ Strength, body recomposition, and sustainable fat loss coaching for clients who value discretion, structure, and high-quality support }}</p>
 
                 <div class="coach-points">
                   <div>
@@ -1070,7 +1116,7 @@
 
             <aside class="floating-chip">
               <small>Client Promise</small>
-              <strong>High-accountability coaching with a polished, personal experience from consultation to check-in.</strong>
+              <strong>Personal coaching, exact standards, and an experience that never feels chaotic.</strong>
             </aside>
           </div>
         </div>
@@ -1079,7 +1125,7 @@
       <section class="section" id="about">
         <div class="section-heading">
           <p>About the Coach</p>
-          <h2>Coaching built on clarity, trust, and a method clients can genuinely sustain.</h2>
+          <h2>An exacting, calm approach to lasting change.</h2>
         </div>
 
         <div class="split-panel">
@@ -1091,8 +1137,8 @@
               supportive, and realistic to maintain.
             </p>
             <p>
-              This section can speak to your philosophy, your standards, and the kind of thoughtful client
-              experience people can expect from the first call through to long-term progress.
+              Use this section to speak to your standards, your philosophy, and why the experience of working with you
+              feels more personal and more composed than generic fitness coaching.
             </p>
 
             <div class="mini-grid">
@@ -1126,7 +1172,7 @@
       <section class="section" id="programs">
         <div class="section-heading">
           <p>Programs</p>
-          <h2>Choose the coaching format that matches your schedule, support needs, and desired level of accountability.</h2>
+          <h2>Three ways to work together, each designed for focused progress.</h2>
         </div>
 
         <div class="program-grid">
@@ -1168,7 +1214,7 @@
       <section class="section" id="results">
         <div class="section-heading">
           <p>Results</p>
-          <h2>Measured progress, stronger habits, and outcomes that look good because they are built to last.</h2>
+          <h2>Visible outcomes. Better habits. Higher standards.</h2>
         </div>
 
         <div class="results-grid">
@@ -1216,7 +1262,7 @@
       <section class="section" id="pricing">
         <div class="section-heading">
           <p>Pricing</p>
-          <h2>Simple starting points for clients who want premium support without guesswork.</h2>
+          <h2>A clear starting point for a more personalised coaching experience.</h2>
         </div>
 
         <div class="pricing-grid">
@@ -1261,7 +1307,7 @@
       <section class="section" id="contact">
         <div class="section-heading">
           <p>Contact</p>
-          <h2>If the fit feels right, the next step should feel simple and personal.</h2>
+          <h2>Start with a short conversation, then choose the right next step.</h2>
         </div>
 
         <div class="contact-grid">
