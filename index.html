@@ -6,33 +6,35 @@
   <title>{{ Coach Name }} | Mo.fitness</title>
   <meta
     name="description"
-    content="Single-file fitness coach landing page for Mo.fitness. Replace the placeholder content with your real offers, proof, pricing, and contact details."
+    content="Premium fitness coaching website for Mo.fitness with private coaching, online plans, results, pricing, and contact sections."
   >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
   <style>
     :root {
-      --bg: #f0e5d6;
-      --bg-soft: #f8f1e8;
-      --ink: #14211b;
-      --ink-soft: #516057;
-      --panel: rgba(255, 250, 243, 0.74);
-      --panel-strong: rgba(255, 251, 246, 0.92);
-      --green: #18372f;
-      --green-deep: #10241e;
-      --accent: #e2713f;
-      --accent-soft: #f0b775;
-      --line: rgba(20, 33, 27, 0.1);
-      --shadow: 0 24px 56px rgba(48, 34, 22, 0.12);
-      --radius-xl: 34px;
+      --bg: #f5efe5;
+      --bg-soft: #fbf6ef;
+      --bg-deep: #e8decf;
+      --ink: #1e241f;
+      --ink-soft: #5f665f;
+      --panel: rgba(255, 250, 244, 0.72);
+      --panel-strong: rgba(255, 251, 247, 0.92);
+      --green: #20372e;
+      --green-deep: #13231d;
+      --accent: #b88452;
+      --accent-deep: #8d633e;
+      --accent-soft: #d5b089;
+      --line: rgba(31, 36, 31, 0.1);
+      --shadow: 0 28px 70px rgba(63, 44, 28, 0.1);
+      --radius-xl: 38px;
       --radius-lg: 24px;
       --radius-md: 18px;
       --radius-pill: 999px;
-      --max: 1180px;
+      --max: 1200px;
     }
 
     * {
@@ -48,35 +50,34 @@
       font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at 12% 14%, rgba(240, 183, 117, 0.7), transparent 20rem),
-        radial-gradient(circle at 84% 12%, rgba(226, 113, 63, 0.16), transparent 18rem),
-        linear-gradient(180deg, #f8f0e5 0%, var(--bg) 52%, #eadbc7 100%);
+        radial-gradient(circle at 12% 10%, rgba(213, 176, 137, 0.48), transparent 21rem),
+        radial-gradient(circle at 88% 8%, rgba(32, 55, 46, 0.1), transparent 18rem),
+        linear-gradient(180deg, #faf4eb 0%, var(--bg) 50%, var(--bg-deep) 100%);
     }
 
-    body::before,
+    body::before {
+      top: 5rem;
+      right: -4rem;
+      background: rgba(184, 132, 82, 0.12);
+    }
+
     body::after {
       content: "";
       position: fixed;
       inset: auto;
-      width: 18rem;
-      height: 18rem;
+      width: 20rem;
+      height: 20rem;
       border-radius: 50%;
-      filter: blur(30px);
+      filter: blur(40px);
       pointer-events: none;
       z-index: -1;
-      opacity: 0.6;
-    }
-
-    body::before {
-      top: 6rem;
-      right: -4rem;
-      background: rgba(226, 113, 63, 0.16);
+      opacity: 0.66;
     }
 
     body::after {
-      bottom: 10rem;
-      left: -4rem;
-      background: rgba(24, 55, 47, 0.12);
+      bottom: 8rem;
+      left: -6rem;
+      background: rgba(32, 55, 46, 0.09);
     }
 
     a {
@@ -87,23 +88,23 @@
     .page {
       width: min(var(--max), calc(100% - 28px));
       margin: 0 auto;
-      padding: 18px 0 40px;
+      padding: 22px 0 48px;
     }
 
     .site-header {
       position: sticky;
-      top: 16px;
+      top: 18px;
       z-index: 10;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      padding: 14px 18px;
-      background: rgba(255, 249, 242, 0.76);
-      border: 1px solid rgba(255, 255, 255, 0.72);
+      padding: 15px 20px;
+      background: rgba(250, 245, 237, 0.78);
+      border: 1px solid rgba(88, 77, 62, 0.08);
       border-radius: var(--radius-pill);
-      box-shadow: 0 18px 36px rgba(52, 38, 24, 0.08);
-      backdrop-filter: blur(16px);
+      box-shadow: 0 18px 38px rgba(58, 42, 27, 0.07);
+      backdrop-filter: blur(18px);
     }
 
     .brand {
@@ -116,14 +117,16 @@
     .brand-mark {
       display: inline-grid;
       place-items: center;
-      width: 50px;
-      height: 50px;
-      border-radius: 16px;
-      background: linear-gradient(180deg, var(--green) 0%, var(--green-deep) 100%);
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(34, 57, 47, 0.98), rgba(19, 35, 29, 0.98));
+      border: 1px solid rgba(213, 176, 137, 0.2);
       color: #fff9f1;
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 1.5rem;
-      letter-spacing: 0.08em;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
     }
 
     .brand-name {
@@ -135,6 +138,7 @@
     .brand-name strong {
       font-size: 1rem;
       line-height: 1.1;
+      letter-spacing: 0.01em;
     }
 
     .brand-name span {
@@ -147,8 +151,11 @@
       align-items: center;
       justify-content: flex-end;
       flex-wrap: wrap;
-      gap: 18px;
-      font-size: 0.94rem;
+      gap: 20px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
       color: var(--ink-soft);
     }
 
@@ -163,8 +170,8 @@
       left: 0;
       bottom: -3px;
       width: 100%;
-      height: 2px;
-      background: var(--accent);
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), transparent);
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 160ms ease;
@@ -177,41 +184,42 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
-      gap: 30px;
-      align-items: end;
-      min-height: calc(100vh - 140px);
-      padding: 24px 0 10px;
+      grid-template-columns: minmax(0, 0.9fr) minmax(380px, 1.1fr);
+      gap: 42px;
+      align-items: center;
+      min-height: calc(100vh - 154px);
+      padding: 44px 0 26px;
     }
 
     .hero-copy {
-      max-width: 570px;
-      padding-bottom: 8px;
+      max-width: 560px;
+      padding-bottom: 18px;
+      animation: rise 700ms ease both;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin: 0 0 20px;
-      padding: 11px 16px;
-      background: rgba(255, 251, 246, 0.86);
-      border: 1px solid rgba(20, 33, 27, 0.08);
+      margin: 0 0 24px;
+      padding: 10px 16px;
+      background: rgba(255, 251, 246, 0.72);
+      border: 1px solid rgba(31, 36, 31, 0.08);
       border-radius: var(--radius-pill);
-      box-shadow: 0 14px 28px rgba(63, 46, 29, 0.08);
-      color: var(--accent);
-      font-size: 0.78rem;
+      box-shadow: 0 12px 24px rgba(63, 46, 29, 0.05);
+      color: var(--accent-deep);
+      font-size: 0.74rem;
       font-weight: 800;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
     }
 
     .eyebrow::before {
       content: "";
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+      background: linear-gradient(135deg, var(--accent-deep), var(--accent-soft));
     }
 
     h1,
@@ -222,200 +230,224 @@
 
     .hero-title {
       display: grid;
-      gap: 10px;
-      font-family: "Bebas Neue", sans-serif;
-      font-size: clamp(3.15rem, 5.1vw, 4.95rem);
-      line-height: 0.92;
-      letter-spacing: 0.01em;
+      gap: 4px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(4.2rem, 6vw, 6.25rem);
+      font-weight: 600;
+      line-height: 0.88;
+      letter-spacing: -0.04em;
       max-width: none;
     }
 
     .hero-title span {
-      white-space: nowrap;
+      white-space: normal;
     }
 
     .hero-title .soft {
-      color: rgba(20, 33, 27, 0.86);
+      color: rgba(30, 36, 31, 0.9);
     }
 
     .hero-title .strong {
-      color: var(--green-deep);
-      font-size: 1.08em;
+      color: var(--accent-deep);
+      font-style: italic;
+      padding-left: 0.12em;
     }
 
     .hero-lead {
       margin: 22px 0 0;
-      max-width: 43ch;
+      max-width: 47ch;
       color: var(--ink-soft);
       font-size: 1rem;
-      line-height: 1.78;
+      line-height: 1.92;
     }
 
     .hero-lead strong {
-      color: var(--ink);
+      color: var(--green-deep);
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 28px;
+      margin-top: 30px;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 54px;
-      padding: 0 24px;
+      min-height: 56px;
+      padding: 0 26px;
       border-radius: var(--radius-pill);
       border: 1px solid transparent;
-      font-weight: 800;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
       transition:
         transform 160ms ease,
         background 160ms ease,
-        border-color 160ms ease;
+        border-color 160ms ease,
+        box-shadow 160ms ease;
     }
 
     .button:hover,
     .button:focus-visible {
       transform: translateY(-2px);
+      box-shadow: 0 18px 34px rgba(52, 38, 24, 0.1);
     }
 
     .button.primary {
-      background: linear-gradient(180deg, #eb7c49 0%, #de6735 100%);
+      background: linear-gradient(180deg, #263f35 0%, #162822 100%);
+      border-color: rgba(213, 176, 137, 0.18);
       color: #fffdf8;
-      box-shadow: 0 18px 30px rgba(226, 113, 63, 0.22);
+      box-shadow: 0 18px 34px rgba(22, 40, 34, 0.18);
     }
 
     .button.secondary {
-      background: rgba(255, 252, 247, 0.6);
-      border-color: rgba(20, 33, 27, 0.12);
+      background: rgba(255, 251, 246, 0.5);
+      border-color: rgba(31, 36, 31, 0.12);
     }
 
     .proof-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 30px;
+      gap: 16px;
+      margin-top: 34px;
     }
 
     .proof-card,
     .surface-card {
       background: var(--panel);
-      border: 1px solid rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(16px);
+      border: 1px solid rgba(87, 74, 57, 0.08);
+      backdrop-filter: blur(18px);
       box-shadow: var(--shadow);
     }
 
     .proof-card {
-      padding: 18px;
-      border-radius: 22px;
-      background: rgba(255, 251, 246, 0.84);
+      padding: 20px 20px 18px;
+      border-radius: 24px;
+      background: rgba(255, 251, 246, 0.78);
+      animation: rise 720ms ease both;
+    }
+
+    .proof-card:nth-child(2) {
+      animation-delay: 80ms;
+    }
+
+    .proof-card:nth-child(3) {
+      animation-delay: 160ms;
     }
 
     .proof-card strong {
       display: block;
-      font-family: "Bebas Neue", sans-serif;
-      font-size: clamp(2.1rem, 3vw, 2.8rem);
-      line-height: 0.9;
-      letter-spacing: 0.02em;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.4rem, 3vw, 3rem);
+      font-weight: 600;
+      line-height: 0.92;
+      letter-spacing: -0.03em;
     }
 
     .proof-card span {
       display: block;
       margin-top: 8px;
       color: var(--ink-soft);
-      font-size: 0.92rem;
-      line-height: 1.5;
+      font-size: 0.88rem;
+      line-height: 1.6;
     }
 
     .hero-visual {
       position: relative;
       display: flex;
       justify-content: flex-end;
-      align-items: flex-end;
+      align-items: center;
     }
 
     .visual-shell {
-      width: min(100%, 570px);
+      width: min(100%, 600px);
       position: relative;
+      animation: rise 820ms ease both;
     }
 
     .portrait-card {
       position: relative;
       overflow: hidden;
-      min-height: 650px;
-      padding: 28px;
-      border-radius: 38px;
+      min-height: 710px;
+      padding: 30px;
+      border-radius: 42px;
       background:
-        radial-gradient(circle at top right, rgba(240, 183, 117, 0.34), transparent 14rem),
-        linear-gradient(165deg, #1e4037 0%, #17352f 55%, #10241f 100%);
+        radial-gradient(circle at 78% 16%, rgba(213, 176, 137, 0.18), transparent 15rem),
+        radial-gradient(circle at 16% 16%, rgba(255, 255, 255, 0.06), transparent 14rem),
+        linear-gradient(155deg, #20372e 0%, #1a2d26 52%, #13231d 100%);
+      border: 1px solid rgba(213, 176, 137, 0.16);
       color: #fffef9;
-      box-shadow: 0 34px 72px rgba(16, 36, 31, 0.24);
+      box-shadow: 0 40px 90px rgba(19, 35, 29, 0.2);
     }
 
     .portrait-card::before,
     .portrait-card::after {
       content: "";
       position: absolute;
-      border-radius: 50%;
+      pointer-events: none;
     }
 
     .portrait-card::before {
-      width: 16rem;
-      height: 16rem;
-      right: -5rem;
-      top: -4rem;
-      background: rgba(255, 255, 255, 0.06);
+      inset: 16px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .portrait-card::after {
-      width: 9rem;
-      height: 9rem;
-      left: -2.5rem;
-      bottom: 11rem;
-      background: rgba(226, 113, 63, 0.16);
+      width: 14rem;
+      height: 14rem;
+      right: -4rem;
+      bottom: -3rem;
+      border-radius: 50%;
+      background: rgba(184, 132, 82, 0.12);
+      filter: blur(10px);
     }
 
     .portrait-stage {
       position: relative;
-      min-height: 380px;
+      min-height: 420px;
       display: grid;
       place-items: end center;
-      padding-top: 10px;
+      padding-top: 12px;
     }
 
     .portrait-shape {
-      width: min(300px, 70%);
+      width: min(320px, 74%);
       aspect-ratio: 0.72;
-      border-radius: 180px 180px 34px 34px;
+      border-radius: 210px 210px 34px 34px;
       background:
-        linear-gradient(180deg, rgba(247, 236, 208, 0.72), rgba(205, 177, 126, 0.5)),
-        linear-gradient(160deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.02));
-      border: 1px solid rgba(255, 255, 255, 0.12);
+        linear-gradient(180deg, rgba(245, 235, 214, 0.84), rgba(198, 169, 126, 0.5)),
+        linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.14);
       box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.05),
-        0 28px 60px rgba(0, 0, 0, 0.22);
+        inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+        0 34px 72px rgba(0, 0, 0, 0.22);
     }
 
     .photo-note {
       position: absolute;
-      left: 14px;
-      bottom: 18px;
+      left: 20px;
+      bottom: 16px;
       display: inline-flex;
       padding: 12px 16px;
       border-radius: var(--radius-pill);
-      background: rgba(255, 255, 255, 0.1);
-      color: rgba(255, 255, 255, 0.88);
-      font-size: 0.88rem;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.82rem;
+      letter-spacing: 0.03em;
       backdrop-filter: blur(12px);
     }
 
     .coach-overview {
       display: grid;
-      gap: 16px;
-      margin-top: 22px;
+      gap: 18px;
+      margin-top: 26px;
+      position: relative;
+      z-index: 1;
     }
 
     .location-row {
@@ -429,42 +461,48 @@
       padding: 10px 14px;
       border-radius: var(--radius-pill);
       background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       color: rgba(255, 255, 255, 0.88);
-      font-size: 0.84rem;
-      letter-spacing: 0.04em;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .coach-overview h2 {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: clamp(2.8rem, 4vw, 4rem);
-      line-height: 0.92;
-      letter-spacing: 0.02em;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3.2rem, 4.4vw, 4.6rem);
+      font-weight: 600;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
     }
 
     .coach-overview p {
       margin: 0;
-      color: rgba(255, 255, 255, 0.78);
-      line-height: 1.72;
+      max-width: 44ch;
+      color: rgba(255, 255, 255, 0.76);
+      line-height: 1.82;
     }
 
     .coach-points {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
+      gap: 14px;
     }
 
     .coach-points div {
-      padding: 15px;
+      padding: 16px;
       border-radius: 18px;
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .coach-points strong {
       display: block;
-      font-size: 0.76rem;
-      letter-spacing: 0.12em;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.58);
+      color: rgba(255, 255, 255, 0.56);
     }
 
     .coach-points span {
@@ -475,62 +513,69 @@
 
     .floating-chip {
       position: absolute;
-      right: 18px;
-      bottom: 20px;
-      max-width: 250px;
-      padding: 16px 18px;
+      top: 24px;
+      right: -18px;
+      max-width: 230px;
+      padding: 18px 18px 16px;
       border-radius: 22px;
-      background: rgba(255, 250, 245, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      box-shadow: 0 20px 38px rgba(59, 40, 25, 0.12);
+      background: rgba(255, 249, 242, 0.9);
+      border: 1px solid rgba(122, 97, 71, 0.1);
+      box-shadow: 0 24px 40px rgba(59, 40, 25, 0.12);
       backdrop-filter: blur(14px);
     }
 
     .floating-chip small {
       display: block;
       margin-bottom: 8px;
-      color: var(--accent);
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .floating-chip strong {
-      display: block;
-      line-height: 1.58;
-    }
-
-    .section {
-      margin-top: 30px;
-      padding: 34px;
-      border-radius: 34px;
-      background: rgba(255, 250, 243, 0.46);
-      border: 1px solid rgba(255, 255, 255, 0.56);
-      backdrop-filter: blur(12px);
-    }
-
-    .section-heading {
-      display: grid;
-      gap: 12px;
-      margin-bottom: 26px;
-      max-width: 760px;
-    }
-
-    .section-heading p {
-      margin: 0;
-      color: var(--accent);
-      font-size: 0.8rem;
+      color: var(--accent-deep);
+      font-size: 0.72rem;
       font-weight: 800;
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
+    .floating-chip strong {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .section {
+      margin-top: 42px;
+      padding: 38px 36px;
+      border-radius: 36px;
+      background: rgba(255, 249, 242, 0.48);
+      border: 1px solid rgba(95, 82, 65, 0.08);
+      box-shadow: 0 18px 46px rgba(73, 53, 35, 0.05);
+      backdrop-filter: blur(14px);
+      animation: rise 760ms ease both;
+    }
+
+    .section-heading {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 30px;
+      max-width: 720px;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--accent-deep);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
     .section-heading h2 {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: clamp(2.7rem, 5vw, 4.6rem);
-      line-height: 0.94;
-      letter-spacing: 0.02em;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3rem, 4.8vw, 4.9rem);
+      font-weight: 600;
+      line-height: 0.92;
+      letter-spacing: -0.035em;
     }
 
     .split-panel {
@@ -540,7 +585,7 @@
     }
 
     .surface-card {
-      padding: 24px;
+      padding: 28px;
       border-radius: var(--radius-lg);
     }
 
@@ -549,10 +594,11 @@
     .result-card h3,
     .pricing-card h3,
     .contact-card h3 {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 2rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.15rem;
+      font-weight: 600;
       line-height: 0.96;
-      letter-spacing: 0.02em;
+      letter-spacing: -0.03em;
     }
 
     .surface-card p,
@@ -563,7 +609,7 @@
     .contact-card p,
     .contact-form p {
       color: var(--ink-soft);
-      line-height: 1.74;
+      line-height: 1.82;
     }
 
     .feature-list {
@@ -578,7 +624,7 @@
       position: relative;
       padding-left: 22px;
       color: var(--ink-soft);
-      line-height: 1.64;
+      line-height: 1.72;
     }
 
     .feature-list li::before {
@@ -586,10 +632,10 @@
       position: absolute;
       left: 0;
       top: 0.72em;
-      width: 9px;
-      height: 9px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+      background: linear-gradient(135deg, var(--accent-deep), var(--accent-soft));
     }
 
     .mini-grid {
@@ -600,18 +646,18 @@
     }
 
     .mini-grid article {
-      padding: 16px;
+      padding: 18px;
       border-radius: 18px;
-      background: rgba(255, 255, 255, 0.58);
-      border: 1px solid rgba(20, 33, 27, 0.08);
+      background: rgba(255, 255, 255, 0.54);
+      border: 1px solid rgba(31, 36, 31, 0.08);
     }
 
     .mini-grid strong {
       display: block;
-      font-size: 0.82rem;
+      font-size: 0.74rem;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--accent);
+      letter-spacing: 0.18em;
+      color: var(--accent-deep);
     }
 
     .mini-grid span {
@@ -647,11 +693,11 @@
     .pricing-card,
     .contact-card,
     .contact-form {
-      padding: 24px;
+      padding: 28px;
       border-radius: var(--radius-lg);
       background: var(--panel);
-      border: 1px solid rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(16px);
+      border: 1px solid rgba(87, 74, 57, 0.08);
+      backdrop-filter: blur(18px);
       box-shadow: var(--shadow);
     }
 
@@ -668,17 +714,17 @@
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      background: rgba(226, 113, 63, 0.08);
+      background: rgba(184, 132, 82, 0.08);
     }
 
     .program-tag,
     .price-tag,
     .form-tag {
       margin: 0 0 10px;
-      color: var(--accent);
-      font-size: 0.78rem;
+      color: var(--accent-deep);
+      font-size: 0.72rem;
       font-weight: 800;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
     }
 
@@ -694,18 +740,19 @@
     }
 
     .metric-row div {
-      padding: 15px;
+      padding: 16px;
       border-radius: 18px;
       background: rgba(255, 255, 255, 0.58);
-      border: 1px solid rgba(20, 33, 27, 0.08);
+      border: 1px solid rgba(31, 36, 31, 0.08);
     }
 
     .metric-row strong {
       display: block;
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 2.2rem;
-      line-height: 0.92;
-      letter-spacing: 0.02em;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.45rem;
+      font-weight: 600;
+      line-height: 0.94;
+      letter-spacing: -0.03em;
     }
 
     .metric-row span {
@@ -719,31 +766,40 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 250px;
+      min-height: 260px;
     }
 
     .testimonial blockquote {
       margin: 0 0 18px;
-      font-size: 1.02rem;
-      line-height: 1.72;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.66rem;
+      line-height: 1.26;
+      letter-spacing: -0.02em;
       color: var(--ink);
     }
 
     .pricing-card.featured {
       background:
-        radial-gradient(circle at top right, rgba(240, 183, 117, 0.26), transparent 11rem),
-        linear-gradient(180deg, rgba(255, 251, 245, 0.96), rgba(255, 246, 239, 0.94));
-      border-color: rgba(226, 113, 63, 0.18);
-      transform: translateY(-8px);
+        radial-gradient(circle at top right, rgba(213, 176, 137, 0.24), transparent 11rem),
+        linear-gradient(180deg, rgba(255, 251, 245, 0.98), rgba(249, 243, 235, 0.96));
+      border-color: rgba(184, 132, 82, 0.18);
+      transform: translateY(-10px);
     }
 
     .price {
       margin: 0 0 18px;
-      font-family: "Bebas Neue", sans-serif;
-      font-size: clamp(2.7rem, 5vw, 4.1rem);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3rem, 5vw, 4.4rem);
+      font-weight: 600;
       line-height: 0.92;
-      letter-spacing: 0.02em;
+      letter-spacing: -0.04em;
       color: var(--green-deep);
+    }
+
+    .pricing-card,
+    .contact-form {
+      display: flex;
+      flex-direction: column;
     }
 
     .pricing-card .button {
@@ -758,7 +814,7 @@
     .contact-form {
       display: grid;
       gap: 16px;
-      background: linear-gradient(180deg, rgba(255, 251, 246, 0.96), rgba(255, 248, 241, 0.94));
+      background: linear-gradient(180deg, rgba(255, 251, 246, 0.97), rgba(252, 247, 241, 0.94));
     }
 
     .contact-form label {
@@ -774,10 +830,10 @@
     .contact-form input,
     .contact-form textarea {
       width: 100%;
-      padding: 14px 16px;
-      border: 1px solid rgba(20, 33, 27, 0.12);
+      padding: 15px 16px;
+      border: 1px solid rgba(31, 36, 31, 0.12);
       border-radius: 18px;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.94);
       color: var(--ink);
       font: inherit;
       resize: vertical;
@@ -785,8 +841,8 @@
 
     .contact-form input:focus,
     .contact-form textarea:focus {
-      outline: 2px solid rgba(226, 113, 63, 0.22);
-      border-color: rgba(226, 113, 63, 0.42);
+      outline: 2px solid rgba(184, 132, 82, 0.2);
+      border-color: rgba(184, 132, 82, 0.38);
     }
 
     .footer {
@@ -794,13 +850,27 @@
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      padding: 24px 2px 0;
+      margin-top: 12px;
+      padding: 28px 4px 0;
+      border-top: 1px solid rgba(87, 74, 57, 0.08);
       color: var(--ink-soft);
-      font-size: 0.92rem;
+      font-size: 0.88rem;
     }
 
     .footer p {
       margin: 0;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @media (max-width: 1120px) {
@@ -817,6 +887,10 @@
 
       .hero-visual {
         justify-content: flex-start;
+      }
+
+      .visual-shell {
+        width: min(100%, 680px);
       }
 
       .split-panel,
@@ -852,16 +926,17 @@
       }
 
       .hero {
-        gap: 20px;
+        gap: 24px;
+        padding-top: 30px;
       }
 
       .hero-title {
-        font-size: clamp(3.25rem, 17vw, 4.7rem);
-        max-width: 7.5ch;
+        font-size: clamp(3.65rem, 17vw, 5rem);
+        max-width: 9ch;
       }
 
-      .hero-title span {
-        white-space: normal;
+      .hero-actions .button {
+        width: 100%;
       }
 
       .proof-grid,
@@ -880,17 +955,17 @@
       }
 
       .portrait-stage {
-        min-height: 330px;
+        min-height: 340px;
       }
 
       .floating-chip {
         position: static;
         max-width: none;
-        margin-top: 16px;
+        margin-top: 18px;
       }
 
       .section {
-        padding: 24px;
+        padding: 28px 24px;
         border-radius: 28px;
       }
 
@@ -928,16 +1003,15 @@
     <main id="top">
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Private Coaching / Online Plans</p>
+          <p class="eyebrow">Private Coaching / Signature Method</p>
           <h1 class="hero-title">
-            <span class="soft">Move better.</span>
-            <span class="soft">Build strength.</span>
-            <span class="strong">Stay consistent.</span>
+            <span class="soft">Strength with poise.</span>
+            <span class="soft">Structure with calm.</span>
+            <span class="strong">Results that last.</span>
           </h1>
           <p class="hero-lead">
-            A single-file landing page for <strong>{{ Coach Name }}</strong>. Swap every
-            <strong>{{ placeholder }}</strong> with your real offers, proof, pricing, and contact details,
-            and this becomes a clean page you can publish from GitHub.
+            <strong>{{ Coach Name }}</strong> helps <strong>{{ Ideal Client Type }}</strong> build a leaner,
+            stronger, more confident body through high-touch coaching designed to fit real life, not compete with it.
           </p>
 
           <div class="hero-actions">
@@ -948,15 +1022,15 @@
           <div class="proof-grid">
             <article class="proof-card">
               <strong>{{ 6 }}+</strong>
-              <span>Years coaching clients</span>
+              <span>Years refining the method</span>
             </article>
             <article class="proof-card">
               <strong>{{ 120 }}+</strong>
-              <span>Clients supported</span>
+              <span>Transformations guided</span>
             </article>
             <article class="proof-card">
               <strong>{{ 3 }}</strong>
-              <span>Core transformation tracks</span>
+              <span>Private coaching pathways</span>
             </article>
           </div>
         </div>
@@ -966,16 +1040,16 @@
             <article class="portrait-card">
               <div class="portrait-stage">
                 <div class="portrait-shape" aria-hidden="true"></div>
-                <span class="photo-note">Place your coach photo here</span>
+                <span class="photo-note">Signature portrait or training image</span>
               </div>
 
               <div class="coach-overview">
                 <div class="location-row">
                   <span>{{ City }}</span>
-                  <span>{{ Online / In Person }}</span>
+                  <span>{{ Private Studio / Online }}</span>
                 </div>
                 <h2>{{ Coach Name }}</h2>
-                <p>{{ One-line positioning, e.g. Fat Loss / Strength / Body Recomposition Coach }}</p>
+                <p>{{ Strength, body recomposition, and sustainable fat loss coaching for clients who want premium support and clear structure }}</p>
 
                 <div class="coach-points">
                   <div>
@@ -983,20 +1057,20 @@
                     <span>{{ 1:1 Coaching }}</span>
                   </div>
                   <div>
-                    <strong>Style</strong>
-                    <span>{{ Structured and supportive }}</span>
+                    <strong>Approach</strong>
+                    <span>{{ Precision, accountability, and calm guidance }}</span>
                   </div>
                   <div>
-                    <strong>Best For</strong>
-                    <span>{{ Busy professionals / beginners }}</span>
+                    <strong>Ideal Client</strong>
+                    <span>{{ Busy professionals who value quality }}</span>
                   </div>
                 </div>
               </div>
             </article>
 
             <aside class="floating-chip">
-              <small>Quick Edit Tip</small>
-              <strong>Replace every `{{ ... }}` field with your real information and this page is ready to publish.</strong>
+              <small>Client Promise</small>
+              <strong>High-accountability coaching with a polished, personal experience from consultation to check-in.</strong>
             </aside>
           </div>
         </div>
@@ -1005,19 +1079,20 @@
       <section class="section" id="about">
         <div class="section-heading">
           <p>About the Coach</p>
-          <h2>Give people a reason to trust you before they ever message you.</h2>
+          <h2>Coaching built on clarity, trust, and a method clients can genuinely sustain.</h2>
         </div>
 
         <div class="split-panel">
           <article class="surface-card">
             <h3>{{ Coach Name }} / {{ Coach Title }}</h3>
             <p>
-              Use this section for your main introduction. Explain who you help, what kind of transformation
-              you focus on, and what makes your coaching style different. Keep it real, direct, and specific.
+              {{ Coach Name }} works with {{ Ideal Client Type }} who want more than short bursts of motivation.
+              The focus is on building a stronger body, tighter habits, and a coaching rhythm that feels elevated,
+              supportive, and realistic to maintain.
             </p>
             <p>
-              This placeholder can be replaced with your story, certifications, training philosophy, and the
-              kind of client experience you want people to expect from working with you.
+              This section can speak to your philosophy, your standards, and the kind of thoughtful client
+              experience people can expect from the first call through to long-term progress.
             </p>
 
             <div class="mini-grid">
@@ -1037,7 +1112,7 @@
           </article>
 
           <article class="surface-card">
-            <h3>Credentials</h3>
+            <h3>Qualifications & Experience</h3>
             <ul class="feature-list">
               <li>{{ Certification / Credential 01 }}</li>
               <li>{{ Certification / Credential 02 }}</li>
@@ -1051,14 +1126,14 @@
       <section class="section" id="programs">
         <div class="section-heading">
           <p>Programs</p>
-          <h2>Keep the offers clear so the page feels easy to act on.</h2>
+          <h2>Choose the coaching format that matches your schedule, support needs, and desired level of accountability.</h2>
         </div>
 
         <div class="program-grid">
           <article class="program-card">
             <p class="program-tag">01 / In Person</p>
             <h3>1:1 Personal Training</h3>
-            <p>{{ Best for clients who want direct coaching, movement feedback, and structured in-person support }}</p>
+            <p>{{ Ideal for clients who want direct coaching, expert movement feedback, and a premium in-person training experience }}</p>
             <ul class="feature-list">
               <li>{{ Session length }}</li>
               <li>{{ Training location }}</li>
@@ -1069,7 +1144,7 @@
           <article class="program-card">
             <p class="program-tag">02 / Remote</p>
             <h3>Online Coaching</h3>
-            <p>{{ Best for remote clients who want accountability, programming, and weekly adjustment }}</p>
+            <p>{{ Designed for remote clients who want structure, close accountability, and intelligent weekly adjustments }}</p>
             <ul class="feature-list">
               <li>{{ Weekly training plan }}</li>
               <li>{{ Video form review }}</li>
@@ -1080,7 +1155,7 @@
           <article class="program-card">
             <p class="program-tag">03 / Group</p>
             <h3>Small Group Sessions</h3>
-            <p>{{ Best for partner training, team sessions, studio classes, or corporate wellness blocks }}</p>
+            <p>{{ A refined option for partner sessions, private small groups, studio blocks, or premium corporate wellness }}</p>
             <ul class="feature-list">
               <li>{{ Group size }}</li>
               <li>{{ Session format }}</li>
@@ -1093,15 +1168,15 @@
       <section class="section" id="results">
         <div class="section-heading">
           <p>Results</p>
-          <h2>Real proof beats generic promises every time.</h2>
+          <h2>Measured progress, stronger habits, and outcomes that look good because they are built to last.</h2>
         </div>
 
         <div class="results-grid">
           <article class="result-card">
             <h3>Client Results Snapshot</h3>
             <p>
-              Use this area for before-and-after transformations, performance milestones, body composition
-              changes, or any kind of proof that reflects the clients you want more of.
+              Use this section to highlight the kind of progress your best-fit clients care about most:
+              body composition changes, strength milestones, consistency wins, and a better relationship with training.
             </p>
 
             <div class="metric-row">
@@ -1115,23 +1190,23 @@
               </div>
               <div>
                 <strong>{{ 95% }}</strong>
-                <span>Retention placeholder</span>
+                <span>Example client retention rate</span>
               </div>
             </div>
           </article>
 
           <article class="testimonial">
             <div>
-              <h3>Testimonial 01</h3>
-              <blockquote>"{{ Describe the result, the process, and how the client felt working with you }}"</blockquote>
+              <h3>Client Story 01</h3>
+              <blockquote>"{{ I felt more structured, more confident, and finally had a plan I could stay consistent with }}"</blockquote>
             </div>
             <strong>{{ Client Name / Role }}</strong>
           </article>
 
           <article class="testimonial">
             <div>
-              <h3>Testimonial 02</h3>
-              <blockquote>"{{ Describe your coaching style, support, and what changed after the program }}"</blockquote>
+              <h3>Client Story 02</h3>
+              <blockquote>"{{ The coaching felt personal, precise, and genuinely sustainable from week one }}"</blockquote>
             </div>
             <strong>{{ Client Name / Role }}</strong>
           </article>
@@ -1141,7 +1216,7 @@
       <section class="section" id="pricing">
         <div class="section-heading">
           <p>Pricing</p>
-          <h2>Show just enough structure so the enquiry feels qualified.</h2>
+          <h2>Simple starting points for clients who want premium support without guesswork.</h2>
         </div>
 
         <div class="pricing-grid">
@@ -1186,7 +1261,7 @@
       <section class="section" id="contact">
         <div class="section-heading">
           <p>Contact</p>
-          <h2>Make it obvious how someone should take the next step.</h2>
+          <h2>If the fit feels right, the next step should feel simple and personal.</h2>
         </div>
 
         <div class="contact-grid">
@@ -1211,9 +1286,9 @@
           </div>
 
           <form class="contact-form">
-            <p class="form-tag">Enquiry Form Placeholder</p>
-            <h3>Connect this to your booking flow</h3>
-            <p>Keep this as a visual placeholder for now, or replace it later with your real form, booking link, or calendar tool.</p>
+            <p class="form-tag">Start the Conversation</p>
+            <h3>Tell us where you want to go</h3>
+            <p>Share your goal, preferred coaching style, and the best way to reach you. {{ Coach Name }} can follow up with the right next step.</p>
 
             <label>
               <span>Name</span>
@@ -1238,7 +1313,7 @@
 
     <footer class="footer">
       <p>{{ Brand Name / Coach Name }} / Mo.fitness</p>
-      <p>Single-file HTML page with editable placeholder content.</p>
+      <p>Private coaching in {{ City }} and online.</p>
     </footer>
   </div>
 </body>
