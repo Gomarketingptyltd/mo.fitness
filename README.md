@@ -18,19 +18,18 @@ Search for `{{` inside `index.html` and replace each placeholder with your real:
 - testimonials
 - contact details
 
-## Best way to publish
+## Publishing
 
-Treat `Mo.fitness` as its own small GitHub repository.
+This repo is set up to deploy through GitHub Pages with GitHub Actions.
 
 Recommended flow:
 
-1. Create a new GitHub repository named `Mo.fitness`.
-2. Upload the full contents of this folder into that repository.
+1. Keep the page files at the repository root.
+2. Push changes to `main`.
 3. Go to `Settings` -> `Pages`.
-4. Set the source to `GitHub Actions`.
-5. Push to `main` or manually run the workflow from `Actions`.
+4. Set the source to `GitHub Actions` if it is not already selected.
 
-Once Pages is enabled, GitHub will publish this folder as its own standalone site.
+After the first successful workflow run, GitHub will publish this page as its own standalone site.
 
 ## Notes
 

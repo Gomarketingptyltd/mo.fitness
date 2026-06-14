@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ Coach Name }} | Mo.fitness</title>
+  <meta
+    name="description"
+    content="Single-file fitness coach landing page for Mo.fitness. Replace the placeholder content with your real offers, proof, pricing, and contact details."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <style>
+    :root {
+      --bg: #f0e5d6;
+      --bg-soft: #f8f1e8;
+      --ink: #14211b;
+      --ink-soft: #516057;
+      --panel: rgba(255, 250, 243, 0.74);
+      --panel-strong: rgba(255, 251, 246, 0.92);
+      --green: #18372f;
+      --green-deep: #10241e;
+      --accent: #e2713f;
+      --accent-soft: #f0b775;
+      --line: rgba(20, 33, 27, 0.1);
+      --shadow: 0 24px 56px rgba(48, 34, 22, 0.12);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-pill: 999px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 14%, rgba(240, 183, 117, 0.7), transparent 20rem),
+        radial-gradient(circle at 84% 12%, rgba(226, 113, 63, 0.16), transparent 18rem),
+        linear-gradient(180deg, #f8f0e5 0%, var(--bg) 52%, #eadbc7 100%);
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: auto;
+      width: 18rem;
+      height: 18rem;
+      border-radius: 50%;
+      filter: blur(30px);
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.6;
+    }
+
+    body::before {
+      top: 6rem;
+      right: -4rem;
+      background: rgba(226, 113, 63, 0.16);
+    }
+
+    body::after {
+      bottom: 10rem;
+      left: -4rem;
+      background: rgba(24, 55, 47, 0.12);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(var(--max), calc(100% - 28px));
+      margin: 0 auto;
+      padding: 18px 0 40px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 16px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 18px;
+      background: rgba(255, 249, 242, 0.76);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: var(--radius-pill);
+      box-shadow: 0 18px 36px rgba(52, 38, 24, 0.08);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      display: inline-grid;
+      place-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, var(--green) 0%, var(--green-deep) 100%);
+      color: #fff9f1;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-name {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .brand-name strong {
+      font-size: 1rem;
+      line-height: 1.1;
+    }
+
+    .brand-name span {
+      color: var(--ink-soft);
+      font-size: 0.82rem;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.94rem;
+      color: var(--ink-soft);
+    }
+
+    .nav a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 160ms ease;
+    }
+
+    .nav a:hover::after,
+    .nav a:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+      gap: 30px;
+      align-items: end;
+      min-height: calc(100vh - 140px);
+      padding: 24px 0 10px;
+    }
+
+    .hero-copy {
+      max-width: 570px;
+      padding-bottom: 8px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 20px;
+      padding: 11px 16px;
+      background: rgba(255, 251, 246, 0.86);
+      border: 1px solid rgba(20, 33, 27, 0.08);
+      border-radius: var(--radius-pill);
+      box-shadow: 0 14px 28px rgba(63, 46, 29, 0.08);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+    }
+
+    .hero-title {
+      display: grid;
+      gap: 10px;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(3.15rem, 5.1vw, 4.95rem);
+      line-height: 0.92;
+      letter-spacing: 0.01em;
+      max-width: none;
+    }
+
+    .hero-title span {
+      white-space: nowrap;
+    }
+
+    .hero-title .soft {
+      color: rgba(20, 33, 27, 0.86);
+    }
+
+    .hero-title .strong {
+      color: var(--green-deep);
+      font-size: 1.08em;
+    }
+
+    .hero-lead {
+      margin: 22px 0 0;
+      max-width: 43ch;
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.78;
+    }
+
+    .hero-lead strong {
+      color: var(--ink);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      font-weight: 800;
+      transition:
+        transform 160ms ease,
+        background 160ms ease,
+        border-color 160ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .button.primary {
+      background: linear-gradient(180deg, #eb7c49 0%, #de6735 100%);
+      color: #fffdf8;
+      box-shadow: 0 18px 30px rgba(226, 113, 63, 0.22);
+    }
+
+    .button.secondary {
+      background: rgba(255, 252, 247, 0.6);
+      border-color: rgba(20, 33, 27, 0.12);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .proof-card,
+    .surface-card {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
+
+    .proof-card {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255, 251, 246, 0.84);
+    }
+
+    .proof-card strong {
+      display: block;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(2.1rem, 3vw, 2.8rem);
+      line-height: 0.9;
+      letter-spacing: 0.02em;
+    }
+
+    .proof-card span {
+      display: block;
+      margin-top: 8px;
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    .visual-shell {
+      width: min(100%, 570px);
+      position: relative;
+    }
+
+    .portrait-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 650px;
+      padding: 28px;
+      border-radius: 38px;
+      background:
+        radial-gradient(circle at top right, rgba(240, 183, 117, 0.34), transparent 14rem),
+        linear-gradient(165deg, #1e4037 0%, #17352f 55%, #10241f 100%);
+      color: #fffef9;
+      box-shadow: 0 34px 72px rgba(16, 36, 31, 0.24);
+    }
+
+    .portrait-card::before,
+    .portrait-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .portrait-card::before {
+      width: 16rem;
+      height: 16rem;
+      right: -5rem;
+      top: -4rem;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .portrait-card::after {
+      width: 9rem;
+      height: 9rem;
+      left: -2.5rem;
+      bottom: 11rem;
+      background: rgba(226, 113, 63, 0.16);
+    }
+
+    .portrait-stage {
+      position: relative;
+      min-height: 380px;
+      display: grid;
+      place-items: end center;
+      padding-top: 10px;
+    }
+
+    .portrait-shape {
+      width: min(300px, 70%);
+      aspect-ratio: 0.72;
+      border-radius: 180px 180px 34px 34px;
+      background:
+        linear-gradient(180deg, rgba(247, 236, 208, 0.72), rgba(205, 177, 126, 0.5)),
+        linear-gradient(160deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+        0 28px 60px rgba(0, 0, 0, 0.22);
+    }
+
+    .photo-note {
+      position: absolute;
+      left: 14px;
+      bottom: 18px;
+      display: inline-flex;
+      padding: 12px 16px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.88rem;
+      backdrop-filter: blur(12px);
+    }
+
+    .coach-overview {
+      display: grid;
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .location-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .location-row span {
+      display: inline-flex;
+      padding: 10px 14px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.84rem;
+      letter-spacing: 0.04em;
+    }
+
+    .coach-overview h2 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(2.8rem, 4vw, 4rem);
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+    }
+
+    .coach-overview p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.72;
+    }
+
+    .coach-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .coach-points div {
+      padding: 15px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .coach-points strong {
+      display: block;
+      font-size: 0.76rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.58);
+    }
+
+    .coach-points span {
+      display: block;
+      margin-top: 8px;
+      line-height: 1.55;
+    }
+
+    .floating-chip {
+      position: absolute;
+      right: 18px;
+      bottom: 20px;
+      max-width: 250px;
+      padding: 16px 18px;
+      border-radius: 22px;
+      background: rgba(255, 250, 245, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 20px 38px rgba(59, 40, 25, 0.12);
+      backdrop-filter: blur(14px);
+    }
+
+    .floating-chip small {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .floating-chip strong {
+      display: block;
+      line-height: 1.58;
+    }
+
+    .section {
+      margin-top: 30px;
+      padding: 34px;
+      border-radius: 34px;
+      background: rgba(255, 250, 243, 0.46);
+      border: 1px solid rgba(255, 255, 255, 0.56);
+      backdrop-filter: blur(12px);
+    }
+
+    .section-heading {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 26px;
+      max-width: 760px;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(2.7rem, 5vw, 4.6rem);
+      line-height: 0.94;
+      letter-spacing: 0.02em;
+    }
+
+    .split-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+      gap: 18px;
+    }
+
+    .surface-card {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+    }
+
+    .surface-card h3,
+    .program-card h3,
+    .result-card h3,
+    .pricing-card h3,
+    .contact-card h3 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 2rem;
+      line-height: 0.96;
+      letter-spacing: 0.02em;
+    }
+
+    .surface-card p,
+    .program-card p,
+    .result-card p,
+    .testimonial p,
+    .pricing-card p,
+    .contact-card p,
+    .contact-form p {
+      color: var(--ink-soft);
+      line-height: 1.74;
+    }
+
+    .feature-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .feature-list li {
+      position: relative;
+      padding-left: 22px;
+      color: var(--ink-soft);
+      line-height: 1.64;
+    }
+
+    .feature-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .mini-grid article {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.58);
+      border: 1px solid rgba(20, 33, 27, 0.08);
+    }
+
+    .mini-grid strong {
+      display: block;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+    }
+
+    .mini-grid span {
+      display: block;
+      margin-top: 10px;
+      line-height: 1.55;
+    }
+
+    .program-grid,
+    .results-grid,
+    .pricing-grid,
+    .contact-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .program-grid,
+    .pricing-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .results-grid {
+      grid-template-columns: minmax(0, 1.15fr) repeat(2, minmax(0, 0.85fr));
+    }
+
+    .contact-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.96fr);
+    }
+
+    .program-card,
+    .result-card,
+    .testimonial,
+    .pricing-card,
+    .contact-card,
+    .contact-form {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
+
+    .program-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .program-card::after {
+      content: "";
+      position: absolute;
+      right: -32px;
+      top: -32px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(226, 113, 63, 0.08);
+    }
+
+    .program-tag,
+    .price-tag,
+    .form-tag {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .result-card {
+      display: grid;
+      gap: 16px;
+    }
+
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric-row div {
+      padding: 15px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.58);
+      border: 1px solid rgba(20, 33, 27, 0.08);
+    }
+
+    .metric-row strong {
+      display: block;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 2.2rem;
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+    }
+
+    .metric-row span {
+      display: block;
+      margin-top: 10px;
+      color: var(--ink-soft);
+      line-height: 1.45;
+    }
+
+    .testimonial {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 250px;
+    }
+
+    .testimonial blockquote {
+      margin: 0 0 18px;
+      font-size: 1.02rem;
+      line-height: 1.72;
+      color: var(--ink);
+    }
+
+    .pricing-card.featured {
+      background:
+        radial-gradient(circle at top right, rgba(240, 183, 117, 0.26), transparent 11rem),
+        linear-gradient(180deg, rgba(255, 251, 245, 0.96), rgba(255, 246, 239, 0.94));
+      border-color: rgba(226, 113, 63, 0.18);
+      transform: translateY(-8px);
+    }
+
+    .price {
+      margin: 0 0 18px;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(2.7rem, 5vw, 4.1rem);
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+      color: var(--green-deep);
+    }
+
+    .pricing-card .button {
+      margin-top: auto;
+    }
+
+    .contact-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 16px;
+      background: linear-gradient(180deg, rgba(255, 251, 246, 0.96), rgba(255, 248, 241, 0.94));
+    }
+
+    .contact-form label {
+      display: grid;
+      gap: 8px;
+    }
+
+    .contact-form span {
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid rgba(20, 33, 27, 0.12);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--ink);
+      font: inherit;
+      resize: vertical;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: 2px solid rgba(226, 113, 63, 0.22);
+      border-color: rgba(226, 113, 63, 0.42);
+    }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 24px 2px 0;
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 1120px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-copy,
+      .hero-title,
+      .section-heading {
+        max-width: none;
+      }
+
+      .hero-visual {
+        justify-content: flex-start;
+      }
+
+      .split-panel,
+      .program-grid,
+      .pricing-grid,
+      .contact-grid,
+      .results-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .split-panel > :first-child,
+      .result-card,
+      .contact-stack {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .page {
+        width: min(var(--max), calc(100% - 18px));
+      }
+
+      .site-header {
+        border-radius: 28px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 14px 18px;
+      }
+
+      .hero {
+        gap: 20px;
+      }
+
+      .hero-title {
+        font-size: clamp(3.25rem, 17vw, 4.7rem);
+        max-width: 7.5ch;
+      }
+
+      .hero-title span {
+        white-space: normal;
+      }
+
+      .proof-grid,
+      .coach-points,
+      .mini-grid,
+      .program-grid,
+      .results-grid,
+      .pricing-grid,
+      .contact-grid,
+      .metric-row {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait-card {
+        min-height: auto;
+      }
+
+      .portrait-stage {
+        min-height: 330px;
+      }
+
+      .floating-chip {
+        position: static;
+        max-width: none;
+        margin-top: 16px;
+      }
+
+      .section {
+        padding: 24px;
+        border-radius: 28px;
+      }
+
+      .pricing-card.featured {
+        transform: none;
+      }
+
+      .footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <span class="brand-mark">MO</span>
+        <span class="brand-name">
+          <strong>{{ Brand Name / Coach Name }}</strong>
+          <span>Mo.fitness</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#results">Results</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Private Coaching / Online Plans</p>
+          <h1 class="hero-title">
+            <span class="soft">Move better.</span>
+            <span class="soft">Build strength.</span>
+            <span class="strong">Stay consistent.</span>
+          </h1>
+          <p class="hero-lead">
+            A single-file landing page for <strong>{{ Coach Name }}</strong>. Swap every
+            <strong>{{ placeholder }}</strong> with your real offers, proof, pricing, and contact details,
+            and this becomes a clean page you can publish from GitHub.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button primary" href="#contact">Book a Consultation</a>
+            <a class="button secondary" href="#programs">See Programs</a>
+          </div>
+
+          <div class="proof-grid">
+            <article class="proof-card">
+              <strong>{{ 6 }}+</strong>
+              <span>Years coaching clients</span>
+            </article>
+            <article class="proof-card">
+              <strong>{{ 120 }}+</strong>
+              <span>Clients supported</span>
+            </article>
+            <article class="proof-card">
+              <strong>{{ 3 }}</strong>
+              <span>Core transformation tracks</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="visual-shell">
+            <article class="portrait-card">
+              <div class="portrait-stage">
+                <div class="portrait-shape" aria-hidden="true"></div>
+                <span class="photo-note">Place your coach photo here</span>
+              </div>
+
+              <div class="coach-overview">
+                <div class="location-row">
+                  <span>{{ City }}</span>
+                  <span>{{ Online / In Person }}</span>
+                </div>
+                <h2>{{ Coach Name }}</h2>
+                <p>{{ One-line positioning, e.g. Fat Loss / Strength / Body Recomposition Coach }}</p>
+
+                <div class="coach-points">
+                  <div>
+                    <strong>Offer</strong>
+                    <span>{{ 1:1 Coaching }}</span>
+                  </div>
+                  <div>
+                    <strong>Style</strong>
+                    <span>{{ Structured and supportive }}</span>
+                  </div>
+                  <div>
+                    <strong>Best For</strong>
+                    <span>{{ Busy professionals / beginners }}</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <aside class="floating-chip">
+              <small>Quick Edit Tip</small>
+              <strong>Replace every `{{ ... }}` field with your real information and this page is ready to publish.</strong>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="section-heading">
+          <p>About the Coach</p>
+          <h2>Give people a reason to trust you before they ever message you.</h2>
+        </div>
+
+        <div class="split-panel">
+          <article class="surface-card">
+            <h3>{{ Coach Name }} / {{ Coach Title }}</h3>
+            <p>
+              Use this section for your main introduction. Explain who you help, what kind of transformation
+              you focus on, and what makes your coaching style different. Keep it real, direct, and specific.
+            </p>
+            <p>
+              This placeholder can be replaced with your story, certifications, training philosophy, and the
+              kind of client experience you want people to expect from working with you.
+            </p>
+
+            <div class="mini-grid">
+              <article>
+                <strong>Focus 01</strong>
+                <span>{{ Fat loss with structure }}</span>
+              </article>
+              <article>
+                <strong>Focus 02</strong>
+                <span>{{ Strength that fits real life }}</span>
+              </article>
+              <article>
+                <strong>Focus 03</strong>
+                <span>{{ Habit consistency over hype }}</span>
+              </article>
+            </div>
+          </article>
+
+          <article class="surface-card">
+            <h3>Credentials</h3>
+            <ul class="feature-list">
+              <li>{{ Certification / Credential 01 }}</li>
+              <li>{{ Certification / Credential 02 }}</li>
+              <li>{{ Competition background / industry experience }}</li>
+              <li>{{ Special population or niche expertise }}</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="programs">
+        <div class="section-heading">
+          <p>Programs</p>
+          <h2>Keep the offers clear so the page feels easy to act on.</h2>
+        </div>
+
+        <div class="program-grid">
+          <article class="program-card">
+            <p class="program-tag">01 / In Person</p>
+            <h3>1:1 Personal Training</h3>
+            <p>{{ Best for clients who want direct coaching, movement feedback, and structured in-person support }}</p>
+            <ul class="feature-list">
+              <li>{{ Session length }}</li>
+              <li>{{ Training location }}</li>
+              <li>{{ Nutrition guidance / progress review }}</li>
+            </ul>
+          </article>
+
+          <article class="program-card">
+            <p class="program-tag">02 / Remote</p>
+            <h3>Online Coaching</h3>
+            <p>{{ Best for remote clients who want accountability, programming, and weekly adjustment }}</p>
+            <ul class="feature-list">
+              <li>{{ Weekly training plan }}</li>
+              <li>{{ Video form review }}</li>
+              <li>{{ Weekly check-ins }}</li>
+            </ul>
+          </article>
+
+          <article class="program-card">
+            <p class="program-tag">03 / Group</p>
+            <h3>Small Group Sessions</h3>
+            <p>{{ Best for partner training, team sessions, studio classes, or corporate wellness blocks }}</p>
+            <ul class="feature-list">
+              <li>{{ Group size }}</li>
+              <li>{{ Session format }}</li>
+              <li>{{ Custom themes available }}</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="results">
+        <div class="section-heading">
+          <p>Results</p>
+          <h2>Real proof beats generic promises every time.</h2>
+        </div>
+
+        <div class="results-grid">
+          <article class="result-card">
+            <h3>Client Results Snapshot</h3>
+            <p>
+              Use this area for before-and-after transformations, performance milestones, body composition
+              changes, or any kind of proof that reflects the clients you want more of.
+            </p>
+
+            <div class="metric-row">
+              <div>
+                <strong>{{ -8kg }}</strong>
+                <span>Example fat loss result</span>
+              </div>
+              <div>
+                <strong>{{ 12 weeks }}</strong>
+                <span>Example coaching block</span>
+              </div>
+              <div>
+                <strong>{{ 95% }}</strong>
+                <span>Retention placeholder</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <div>
+              <h3>Testimonial 01</h3>
+              <blockquote>"{{ Describe the result, the process, and how the client felt working with you }}"</blockquote>
+            </div>
+            <strong>{{ Client Name / Role }}</strong>
+          </article>
+
+          <article class="testimonial">
+            <div>
+              <h3>Testimonial 02</h3>
+              <blockquote>"{{ Describe your coaching style, support, and what changed after the program }}"</blockquote>
+            </div>
+            <strong>{{ Client Name / Role }}</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="pricing">
+        <div class="section-heading">
+          <p>Pricing</p>
+          <h2>Show just enough structure so the enquiry feels qualified.</h2>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <p class="price-tag">Starter</p>
+            <h3>{{ Trial Session }}</h3>
+            <p class="price">{{ USD / GBP / AUD }}{{ Price }}</p>
+            <ul class="feature-list">
+              <li>{{ 1 assessment + 1 training session }}</li>
+              <li>{{ Best for first-time enquiries }}</li>
+              <li>{{ Basic action plan }}</li>
+            </ul>
+            <a class="button secondary" href="#contact">Enquire</a>
+          </article>
+
+          <article class="pricing-card featured">
+            <p class="price-tag">Most Popular</p>
+            <h3>{{ Monthly Coaching Package }}</h3>
+            <p class="price">{{ USD / GBP / AUD }}{{ Price }}</p>
+            <ul class="feature-list">
+              <li>{{ Sessions per week }}</li>
+              <li>{{ Weekly adjustments }}</li>
+              <li>{{ Nutrition support }}</li>
+            </ul>
+            <a class="button primary" href="#contact">Book Priority Call</a>
+          </article>
+
+          <article class="pricing-card">
+            <p class="price-tag">Online Only</p>
+            <h3>{{ Accountability Plan }}</h3>
+            <p class="price">{{ USD / GBP / AUD }}{{ Price }}</p>
+            <ul class="feature-list">
+              <li>{{ Remote programming }}</li>
+              <li>{{ Video review }}</li>
+              <li>{{ Weekly accountability }}</li>
+            </ul>
+            <a class="button secondary" href="#contact">See Details</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="section-heading">
+          <p>Contact</p>
+          <h2>Make it obvious how someone should take the next step.</h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-stack">
+            <article class="contact-card">
+              <h3>Contact Details</h3>
+              <ul class="feature-list">
+                <li>Phone: {{ Phone Number }}</li>
+                <li>Email: {{ Email Address }}</li>
+                <li>Instagram / WhatsApp / WeChat: {{ Primary Handle }}</li>
+              </ul>
+            </article>
+
+            <article class="contact-card">
+              <h3>Training Details</h3>
+              <ul class="feature-list">
+                <li>Location: {{ City / Studio Name }}</li>
+                <li>Hours: {{ Business Hours }}</li>
+                <li>Booking Notes: {{ Advance booking details }}</li>
+              </ul>
+            </article>
+          </div>
+
+          <form class="contact-form">
+            <p class="form-tag">Enquiry Form Placeholder</p>
+            <h3>Connect this to your booking flow</h3>
+            <p>Keep this as a visual placeholder for now, or replace it later with your real form, booking link, or calendar tool.</p>
+
+            <label>
+              <span>Name</span>
+              <input type="text" placeholder="{{ Visitor Name }}">
+            </label>
+
+            <label>
+              <span>Best Contact Method</span>
+              <input type="text" placeholder="{{ Phone / Email / Instagram }}">
+            </label>
+
+            <label>
+              <span>Goal</span>
+              <textarea rows="5" placeholder="{{ Example: lose 8kg / improve posture / build strength }}"></textarea>
+            </label>
+
+            <button class="button primary" type="button">Send Enquiry</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>{{ Brand Name / Coach Name }} / Mo.fitness</p>
+      <p>Single-file HTML page with editable placeholder content.</p>
+    </footer>
+  </div>
+</body>
+</html>
