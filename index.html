@@ -168,11 +168,10 @@
       display: none;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
-      gap: 4px;
-      width: 52px;
+      gap: 10px;
+      min-width: 52px;
       height: 52px;
-      padding: 0;
+      padding: 0 16px;
       border: 1px solid rgba(88, 77, 62, 0.12);
       border-radius: 18px;
       background: rgba(255, 251, 246, 0.76);
@@ -181,9 +180,16 @@
       box-shadow: 0 10px 24px rgba(58, 42, 27, 0.06);
     }
 
-    .nav-toggle span,
-    .nav-toggle::before,
-    .nav-toggle::after {
+    .nav-toggle-label {
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-toggle-icon,
+    .nav-toggle-icon::before,
+    .nav-toggle-icon::after {
       content: "";
       display: block;
       width: 18px;
@@ -196,15 +202,33 @@
         opacity 180ms ease;
     }
 
-    .site-header.is-open .nav-toggle::before {
+    .nav-toggle-icon {
+      position: relative;
+    }
+
+    .nav-toggle-icon::before,
+    .nav-toggle-icon::after {
+      position: absolute;
+      left: 0;
+    }
+
+    .nav-toggle-icon::before {
+      top: -6px;
+    }
+
+    .nav-toggle-icon::after {
+      top: 6px;
+    }
+
+    .site-header.is-open .nav-toggle-icon::before {
       transform: translateY(6px) rotate(45deg);
     }
 
-    .site-header.is-open .nav-toggle span {
-      opacity: 0;
+    .site-header.is-open .nav-toggle-icon {
+      background: transparent;
     }
 
-    .site-header.is-open .nav-toggle::after {
+    .site-header.is-open .nav-toggle-icon::after {
       transform: translateY(-6px) rotate(-45deg);
     }
 
@@ -229,21 +253,6 @@
     .nav a:hover::after,
     .nav a:focus-visible::after {
       transform: scaleX(1);
-    }
-
-    .header-cta {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 18px;
-      border-radius: var(--radius-pill);
-      background: linear-gradient(180deg, #263f35 0%, #162822 100%);
-      color: #fffdf8;
-      font-size: 0.86rem;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      box-shadow: 0 14px 24px rgba(22, 40, 34, 0.16);
     }
 
     .hero {
@@ -1085,10 +1094,6 @@
       margin: 0;
     }
 
-    .mobile-dock {
-      display: none;
-    }
-
     @keyframes rise {
       from {
         opacity: 0;
@@ -1177,10 +1182,6 @@
         color: var(--ink-soft);
         font-size: 0.74rem;
         font-weight: 600;
-      }
-
-      .header-cta {
-        display: none;
       }
 
       .nav {
@@ -1344,7 +1345,7 @@
 
       .portrait-card {
         min-height: auto;
-        padding: 16px;
+        padding: 14px;
         border-radius: 28px;
       }
 
@@ -1354,22 +1355,40 @@
       }
 
       .portrait-stage {
-        min-height: 208px;
+        min-height: auto;
       }
 
       .facility-screen {
         width: 100%;
-        padding: 18px;
+        padding: 16px;
         border-radius: 24px;
       }
 
       .facility-screen h3 {
-        font-size: 1.9rem;
+        margin-top: 14px;
+        font-size: 1.58rem;
+        line-height: 0.98;
       }
 
       .facility-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .facility-grid div {
+        padding: 12px;
+        border-radius: 16px;
+      }
+
+      .facility-grid strong {
+        font-size: 0.82rem;
+      }
+
+      .facility-grid span {
+        margin-top: 6px;
+        font-size: 0.68rem;
+        line-height: 1.38;
       }
 
       .photo-note {
@@ -1381,8 +1400,8 @@
       }
 
       .coach-overview {
-        gap: 10px;
-        margin-top: 8px;
+        gap: 8px;
+        margin-top: 12px;
       }
 
       .location-row span {
@@ -1404,28 +1423,30 @@
       }
 
       .section {
-        margin-top: 34px;
-        padding: 22px 0 0;
+        margin-top: 30px;
+        padding: 20px 0 0;
         border-radius: 0;
       }
 
       .section-heading {
-        gap: 8px;
-        margin-bottom: 24px;
+        gap: 7px;
+        margin-bottom: 18px;
       }
 
       .section-heading p {
-        font-size: 0.68rem;
+        font-size: 0.64rem;
+        letter-spacing: 0.2em;
       }
 
       .section-heading h2 {
-        max-width: 11ch;
-        font-size: clamp(1.95rem, 7.6vw, 2.45rem);
-        line-height: 0.96;
+        max-width: none;
+        font-size: clamp(1.8rem, 6.8vw, 2.18rem);
+        line-height: 0.94;
       }
 
       .split-panel {
         grid-template-columns: 1fr;
+        gap: 14px;
       }
 
       .surface-card,
@@ -1434,8 +1455,8 @@
       .pricing-card,
       .contact-card,
       .contact-form {
-        padding: 22px 18px;
-        border-radius: 22px;
+        padding: 20px 18px;
+        border-radius: 20px;
       }
 
       .surface-card h3,
@@ -1443,16 +1464,27 @@
       .result-card h3,
       .pricing-card h3,
       .contact-card h3 {
-        font-size: 1.9rem;
+        font-size: 1.72rem;
+      }
+
+      .surface-card p,
+      .program-card p,
+      .result-card p,
+      .testimonial p,
+      .pricing-card p,
+      .contact-card p,
+      .contact-form p,
+      .feature-list li {
+        line-height: 1.65;
       }
 
       .care-card {
-        padding: 22px 18px;
+        padding: 20px 18px;
       }
 
       .care-card h3 {
         max-width: none;
-        font-size: 1.85rem;
+        font-size: 1.72rem;
         line-height: 0.98;
       }
 
@@ -1478,15 +1510,16 @@
       .schedule-row {
         grid-template-columns: 1fr;
         gap: 8px;
-        padding: 14px;
+        padding: 13px;
       }
 
       .testimonial blockquote {
-        font-size: 1.45rem;
+        font-size: 1.22rem;
+        line-height: 1.22;
       }
 
       .price {
-        font-size: 2.8rem;
+        font-size: 2.45rem;
       }
 
       .pricing-card.featured {
@@ -1499,9 +1532,6 @@
         padding-bottom: 18px;
       }
 
-      .mobile-dock {
-        display: none;
-      }
     }
   </style>
 </head>
@@ -1517,8 +1547,6 @@
         </span>
       </a>
 
-      <a class="header-cta" href="#contact">Visit</a>
-
       <button
         class="nav-toggle"
         type="button"
@@ -1526,7 +1554,8 @@
         aria-controls="primary-nav"
         aria-label="Open navigation"
       >
-        <span></span>
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+        <span class="nav-toggle-label">Menu</span>
       </button>
 
       <nav class="nav" id="primary-nav" aria-label="Primary">
@@ -1547,8 +1576,8 @@
             <span class="strong">Keep it practical.</span>
           </h1>
           <p class="hero-lead">
-            <strong>Mo Fitness Club</strong> gives <strong>busy adults in Sydney</strong> a cleaner way to train:
-            open gym access, coached strength classes, small-group support, and a timetable that fits real life.
+            <strong>Mo Fitness Club</strong> helps <strong>busy adults in Sydney</strong> train consistently with
+            open gym access, coached strength sessions, and a timetable that fits work.
           </p>
 
           <div class="hero-actions">
@@ -1563,11 +1592,11 @@
             </article>
             <article class="proof-card">
               <strong>18</strong>
-              <span>Coached classes and small-group sessions each week</span>
+              <span>Coached sessions each week</span>
             </article>
             <article class="proof-card">
               <strong>7 Days</strong>
-              <span>Members can train every day of the week</span>
+              <span>Open every day</span>
             </article>
           </div>
         </div>
@@ -1578,23 +1607,23 @@
               <div class="portrait-stage">
                 <div class="facility-screen">
                   <small>Facility Snapshot</small>
-                  <h3>Built for steady progress, not chaos.</h3>
+                  <h3>Steady progress, no chaos.</h3>
                   <div class="facility-grid">
-                    <div>
+                  <div>
                       <strong>Strength Floor</strong>
-                      <span>Racks, barbells, dumbbells, sled, cable stations, and recovery space.</span>
+                      <span>Racks, dumbbells, cables, sled, and recovery space.</span>
                     </div>
                     <div>
                       <strong>Member Flow</strong>
-                      <span>Open gym, coached sessions, quick check-ins, showers, and lockers.</span>
+                      <span>Open gym, coached sessions, showers, and lockers.</span>
                     </div>
                     <div>
                       <strong>Beginner Friendly</strong>
-                      <span>Every new member gets an induction and a clear starting path.</span>
+                      <span>Every member gets a clear first-week start.</span>
                     </div>
                     <div>
                       <strong>Coaching Style</strong>
-                      <span>Technique-first, realistic programming, and direct accountability.</span>
+                      <span>Technique first. Practical. Accountable.</span>
                     </div>
                   </div>
                 </div>
@@ -1606,7 +1635,7 @@
                   <span>Open Gym + Classes</span>
                 </div>
                 <h2>Mo Fitness Club</h2>
-                <p>A practical, modern gym for members who want strong coaching, clean equipment, and a membership they will actually use.</p>
+                <p>A practical gym for people who want good coaching, clean equipment, and a routine they will keep.</p>
 
                 <div class="coach-points">
                   <div>
@@ -1636,32 +1665,31 @@
       <section class="section" id="about">
         <div class="section-heading">
           <p>About the Gym</p>
-          <h2>A gym that feels organised, usable, and worth coming back to.</h2>
+          <h2>Clear, calm, and worth returning to.</h2>
         </div>
 
         <div class="split-panel">
           <article class="surface-card">
-            <h3>Mo Fitness Club / Strength, classes, and membership that make sense</h3>
+            <h3>Strength, classes, and memberships that make sense</h3>
             <p>
-              Mo Fitness Club is designed for people who want a real gym routine, not a burst of motivation that fades in two weeks.
-              Members come here for clear equipment zones, useful classes, sensible programming, and staff who coach instead of hovering.
+              Mo Fitness Club is built for people who want a real routine, not a short burst of motivation.
+              Members come for clear equipment zones, useful classes, and coaches who actually coach.
             </p>
             <p>
-              Whether someone wants open gym access, regular coached sessions, or a stronger weekly routine,
-              the goal is the same: make training simple to follow and easy to stick with.
+              The idea is simple: make training easy to follow, easy to repeat, and good enough to keep paying for.
             </p>
 
             <div class="mini-grid">
               <article>
-                <strong>Facility 01</strong>
+                <strong>Equipment</strong>
                 <span>Free weights, racks, sled, cable stations</span>
               </article>
               <article>
-                <strong>Facility 02</strong>
+                <strong>Convenience</strong>
                 <span>Showers, lockers, and easy pre-work sessions</span>
               </article>
               <article>
-                <strong>Facility 03</strong>
+                <strong>Coaching</strong>
                 <span>Small-group coaching without overcrowded classes</span>
               </article>
             </div>
@@ -1670,10 +1698,10 @@
           <article class="surface-card care-card">
             <h3>What members care about</h3>
             <ul class="feature-list care-list">
-              <li>Clean floor layout and enough equipment to train properly</li>
-              <li>Clear induction for new members and first-time lifters</li>
-              <li>Useful class times before work, after work, and on weekends</li>
-              <li>Coaches who can help with fat loss, strength, and better technique</li>
+              <li>Enough equipment to train properly without waiting around</li>
+              <li>A clear start for new members and first-time lifters</li>
+              <li>Class times that work before work, after work, and on weekends</li>
+              <li>Coaches who can fix technique and keep progress moving</li>
             </ul>
           </article>
         </div>
@@ -1682,14 +1710,14 @@
       <section class="section" id="programs">
         <div class="section-heading">
           <p>Classes & Training</p>
-          <h2>Three realistic ways members train here each week.</h2>
+          <h2>Three ways to train each week.</h2>
         </div>
 
         <div class="program-grid">
           <article class="program-card">
             <p class="program-tag">01 / Access</p>
             <h3>Open Gym Access</h3>
-            <p>For members who want a clean, well-equipped space to train on their own schedule without crowd-heavy chain gym chaos.</p>
+            <p>A clean, well-equipped space for members who want to train on their own schedule.</p>
             <ul class="feature-list">
               <li>Weekday access from 5:00am to 10:00pm</li>
               <li>Weekend access from 7:00am to 6:00pm</li>
@@ -1700,7 +1728,7 @@
           <article class="program-card">
             <p class="program-tag">02 / Classes</p>
             <h3>Coached Strength Classes</h3>
-            <p>Small coached sessions built around proper lifting, conditioning, and weekly consistency rather than random circuits.</p>
+            <p>Small coached sessions built around lifting well, moving well, and staying consistent.</p>
             <ul class="feature-list">
               <li>Morning, lunch, and after-work class times</li>
               <li>Technique coaching on every session</li>
@@ -1711,7 +1739,7 @@
           <article class="program-card">
             <p class="program-tag">03 / Coaching</p>
             <h3>Small Group Coaching</h3>
-            <p>For members who want more structure, closer accountability, and a coach tracking progress across the whole month.</p>
+            <p>Extra structure, closer accountability, and a coach following progress across the month.</p>
             <ul class="feature-list">
               <li>Up to 4 clients per session</li>
               <li>Monthly progression and check-ins</li>
@@ -1724,29 +1752,28 @@
       <section class="section" id="results">
         <div class="section-heading">
           <p>Timetable & Member Experience</p>
-          <h2>A weekly schedule people can actually use, plus feedback that feels real.</h2>
+          <h2>A schedule that fits real life.</h2>
         </div>
 
         <div class="results-grid">
           <article class="result-card">
             <h3>Weekly Class Snapshot</h3>
             <p>
-              The goal is simple: enough structure to stay consistent, enough flexibility to fit work and life,
-              and class times that do not force members into impossible routines.
+              Enough structure to stay consistent, and enough flexibility to work around a real week.
             </p>
 
             <div class="schedule-list">
               <div class="schedule-row">
                 <strong>Mon / Wed / Fri</strong>
-                <span>6:00am Strength Circuit, 12:15pm Express Lift, 6:00pm Lower Body Strength</span>
+                <span>6:00am Strength Circuit, 12:15pm Express Lift, 6:00pm Lower Body</span>
               </div>
               <div class="schedule-row">
                 <strong>Tue / Thu</strong>
-                <span>6:30am Full Body Conditioning, 5:30pm Technique & Tempo, 6:30pm Upper Body Strength</span>
+                <span>6:30am Full Body, 5:30pm Technique, 6:30pm Upper Body</span>
               </div>
               <div class="schedule-row">
                 <strong>Saturday</strong>
-                <span>8:00am Small Group Lift, 9:15am Beginner Foundations, open gym until 6:00pm</span>
+                <span>8:00am Small Group Lift, 9:15am Foundations, open gym until 6:00pm</span>
               </div>
             </div>
           </article>
@@ -1754,7 +1781,7 @@
           <article class="testimonial">
             <div>
               <h3>Member Feedback</h3>
-              <blockquote>"It felt more organised, more useful, and finally like a gym I could consistently come back to."</blockquote>
+              <blockquote>"It finally felt like a gym I could keep coming back to."</blockquote>
             </div>
             <strong>Amelia / Graphic Designer</strong>
           </article>
@@ -1762,7 +1789,7 @@
           <article class="testimonial">
             <div>
               <h3>Member Feedback</h3>
-              <blockquote>"The coaches are direct, the classes are not overcrowded, and the equipment setup actually makes sense."</blockquote>
+              <blockquote>"The coaching is direct, and the whole place just makes sense."</blockquote>
             </div>
             <strong>Daniel / Project Manager</strong>
           </article>
@@ -1772,7 +1799,7 @@
       <section class="section" id="pricing">
         <div class="section-heading">
           <p>Memberships</p>
-          <h2>Simple pricing that matches the way people really train.</h2>
+          <h2>Pricing for real routines.</h2>
         </div>
 
         <div class="pricing-grid">
@@ -1817,7 +1844,7 @@
       <section class="section" id="contact">
         <div class="section-heading">
           <p>Visit & Enquire</p>
-          <h2>See the space, ask a few questions, and start with the option that fits.</h2>
+          <h2>Visit once. Start well.</h2>
         </div>
 
         <div class="contact-grid">
@@ -1845,7 +1872,7 @@
             <input type="hidden" name="form-name" value="gym-enquiry">
             <p class="form-tag">Book a Visit</p>
             <h3>Tell us what you need</h3>
-            <p>Share your goal, training background, and the best way to reach you. The team can recommend the right membership, class path, or intro session.</p>
+            <p>Share your goal and the best way to reach you. The team can point you to the right start.</p>
 
             <label>
               <span>Name</span>
@@ -1874,23 +1901,21 @@
     </footer>
   </div>
 
-  <nav class="mobile-dock" aria-label="Mobile Navigation">
-    <a href="#about">About</a>
-    <a href="#programs">Plans</a>
-    <a href="#results">Proof</a>
-    <a href="#contact">Book</a>
-  </nav>
-
   <script>
     const siteHeader = document.querySelector(".site-header");
     const navToggle = document.querySelector(".nav-toggle");
     const smoothLinks = document.querySelectorAll('a[href^="#"]');
 
     if (navToggle && siteHeader) {
+      const navToggleLabel = navToggle.querySelector(".nav-toggle-label");
+
       navToggle.addEventListener("click", () => {
         const isOpen = siteHeader.classList.toggle("is-open");
         navToggle.setAttribute("aria-expanded", String(isOpen));
         navToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+        if (navToggleLabel) {
+          navToggleLabel.textContent = isOpen ? "Close" : "Menu";
+        }
       });
     }
 
@@ -1901,6 +1926,10 @@
           siteHeader?.classList.remove("is-open");
           navToggle?.setAttribute("aria-expanded", "false");
           navToggle?.setAttribute("aria-label", "Open navigation");
+          const navToggleLabel = navToggle?.querySelector(".nav-toggle-label");
+          if (navToggleLabel) {
+            navToggleLabel.textContent = "Menu";
+          }
         }
       });
     });
